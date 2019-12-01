@@ -1,13 +1,29 @@
 const Markup = require("telegraf/markup");
 const lang = "ru";
 
+// const main_menu = function() {
+//   return Markup.keyboard([
+//     [menu_item("add_question", lang)],
+//     [menu_item("balance", lang), menu_item("transfer", lang)],
+//     [
+//       menu_item("deposit", lang),
+//       menu_item("deposit_uzs", lang),
+//       menu_item("withdraw", lang)
+//     ],
+//     [menu_item("help", lang)]
+//   ])
+//     .oneTime()
+//     .resize()
+//     .extra();
+// };
+
 const main_menu = function() {
   return Markup.keyboard([
-    [menu_item("add_question", lang)],
+    // [menu_item("add_question", lang)],
     [menu_item("balance", lang), menu_item("transfer", lang)],
     [
       menu_item("deposit", lang),
-      menu_item("deposit_uzs", lang),
+      // menu_item("deposit_uzs", lang),
       menu_item("withdraw", lang)
     ],
     [menu_item("help", lang)]
@@ -73,10 +89,11 @@ const menu_items = {
   },
   welcome: { ru: 'Добро пожаловать в "Плати Лети", ', en: "Welcome, " },
   welcome_back: { ru: "С возвращением, ", en: "Welcome back, " },
-  help: {
+  help_info: {
     ru: "Плати Лети - сервис оплаты между людьми",
     en: "Pay and Go - payment service for people"
-  }
+  },
+  your_balance: { ru: "ВАШ БАЛАНС:", en: "YOU HAVE:" }
 };
 
 const stickers = {

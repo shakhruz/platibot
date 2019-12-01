@@ -158,7 +158,8 @@ async function showBalance(ctx) {
   utils.getBalance(ctx.from.id, balance => {
     const usd_balance = (balance * rates.eos_price()) / 10000;
     ctx.reply(
-      `YOU HAVE: ${balance} mEOS ($${utils.formatAmount(usd_balance, "USD")})`
+      helpers.text("your_balance") +
+        ` ${balance} mEOS ($${utils.formatAmount(usd_balance, "USD")})`
     );
   });
 }
@@ -207,7 +208,7 @@ function createInvoice(uzs_amount, meos_amount, contract_id) {
 async function help(ctx) {
   ctx.replyWithChatAction("typing");
   await utils.timeout(2000);
-  await ctx.replyWithMarkdown(helpers.text("help"));
+  await ctx.replyWithMarkdown(helpers.text("help_info"));
   // ctx.replyWithChatAction("typing");
   // await utils.timeout(2000);
   // await ctx.replyWithMarkdown(
