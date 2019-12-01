@@ -1,0 +1,4 @@
+bot/data.js
+bot/node_modules
+bot/sqlite.db
+package-lock.json
